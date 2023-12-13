@@ -8,7 +8,7 @@ To run my solutions, I aliased custom `aoc` and `aot` commands, which run the fi
 
 Changes to `~/.bash_profile`:
 ```bash
-alias aoc='echo "$(tput setaf 6)" && python3 "$(fd -e py | head -n 1)" < test && echo "$(tput sgr0)" && python3 "$(fd -e py | head -n 1)" < in'
+alias aoc='echo -n "$(tput setaf 6)" && python3 "$(fd -e py | head -n 1)" < test && echo -n  "$(tput sgr0)" && python3 "$(fd -e py | head -n 1)" < in'
 alias aot='python3 "$(fd -e py | head -n 1)" < test'
 ```
 <br>
