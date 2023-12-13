@@ -1,0 +1,9 @@
+[package]
+name = "aoc_inputs"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+chrono = "0.4.31"
+reqwest = "0.11.22"
+tokio = {version = "1.35.0", features = ["full"]}
