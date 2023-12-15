@@ -71,12 +71,15 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 	if let Some(y) = args.year {
 		if y >= 2015 && y <= 2023 {
 			year = i32::from(y);
+			day = 1;
 		}
 	}	
 
 	if let Some(d) = args.day {
 		if d >= 1 && d <= 35 {
 			day = u32::from(d);
+		} else {
+			day = 1;
 		}
 	}
 	
