@@ -5,16 +5,16 @@ use tokio::io::AsyncWriteExt;
 use clap::Parser;
 
 const LAST_YEAR: i32 = 2023;
-const SESSION: &str = "YOUR SESSION COOKIE";
+const SESSION: &str = "53616c7465645f5f5177f75f726a03467f586a175eb6264212dfa7a6c2f7135ad15f4cc39d24d7ee7c3f26cbed9db5ac7ed951cba5ddcf33fe7e91a023650e7e";
 const FILE_PATH: &str = "./in";
 
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
 struct Args {
-    #[arg(short, long)]
+    #[arg(short, long, alias = "y")]
     year: Option<u16>,
 
-    #[arg(short, long)]
+    #[arg(short, long, alias = "d")]
     day: Option<u8>,
 }
 
@@ -84,5 +84,6 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     make_request(&url).await?;
 
+	println!("Downloaded input file for {} day {} to ./in", year, day);
 	Ok(())
 }
